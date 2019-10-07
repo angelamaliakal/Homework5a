@@ -10,12 +10,53 @@ function displayNum() {
    document.getElementById("display2").innerHTML = numY;
 }
 
-function isFactor() {
-	
+function isFactor(numX, numY) {
+	var numX = document.getElementById("numX").value;
+    var numY = document.getElementById("numY").value;
+	if ((numY % numX) == 0) {
+    	// document.getElementById("display3").innerHTML = "true";
+    	return true;
+    } else {
+    	// document.getElementById("display4").innerHTML = "false";
+    	return false;
+    }
+}
+
+//var array = ["a", "b", "c", "d", "e", "f"];
+function showFactors() {
+	for (i = 0; i < array.length; i++)
+    document.getElementById("display5").innerHTML += (i+1) + ":" + array[i] + " ";
+
+}
+
+// var array = [1, 2, 3, 4, 5, 6];
+function addFactors() {
+var sum = array.reduce(function(a, b) { return a + b; }, 0);
+  document.getElementById("display6").innerHTML = sum;
+}
+
+function getFactors() {
+//var numX = document.getElementById("numX").value;
+var numX= 15;
+var n_factors = [], i;
+for (i = 1; i <= Math.floor(Math.sqrt(numX)); i += 1){
+  if (numX % i === 0)
+  {
+   n_factors.push(i);
+   if (numX / i !== i)
+    n_factors.push(numX / i);
+  }
+ n_factors.sort(function(a, b){return a - b;});  // numeric sort
+ return n_factors;
+ }
+ for (i = 0; i < n_factors.length; i++)
+ document.getElementById("display7").innerHTML += (i+1) + ":" + n_factors[i] + " ";
+ 
 }
 
 </script>
-
+</head>
+<body>
 <h2>Amicable Numbers</h2>
 
 <form>
@@ -26,7 +67,7 @@ function isFactor() {
   Input your second number:<br>
   <input type="text" name="Lucky Number" id="numY">
   <br>
-  <input type="button" value="Submit" id= "submit" onClick= "return displayNum();">
+  <input type="button" value="Submit" id= "submit" onClick= "return getFactors();">
 </form>
 
 <h4>Display Input Numbers:</h4>
@@ -35,6 +76,30 @@ function isFactor() {
 <span id="display2"></span>
 <br>
 
+<!-- 
+<h4>Display True or False:</h4>
+<span id="display3"></span>
+<br>
+<span id="display4"></span>
+<br>
+-->
+
+<!--
+<h4>Display Array:</h4>
+<span id="display5"></span>
+<br>
+-->
+
+<!--
+<h4>Add Array:</h4>
+<span id="display6"></span>
+<br>
+-->
+
+
+<h4>Display Factors:</h4>
+<span id="display7"></span>
+<br>
 
 </body>
 </html>
