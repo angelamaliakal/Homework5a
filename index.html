@@ -35,23 +35,16 @@ var sum = array.reduce(function(a, b) { return a + b; }, 0);
   document.getElementById("display6").innerHTML = sum;
 }
 
-function getFactors() {
-//var numX = document.getElementById("numX").value;
-var numX= 15;
-var n_factors = [], i;
-for (i = 1; i <= Math.floor(Math.sqrt(numX)); i += 1){
-  if (numX % i === 0)
-  {
-   n_factors.push(i);
-   if (numX / i !== i)
-    n_factors.push(numX / i);
-  }
- n_factors.sort(function(a, b){return a - b;});  // numeric sort
- return n_factors;
- }
- for (i = 0; i < n_factors.length; i++)
- document.getElementById("display7").innerHTML += (i+1) + ":" + n_factors[i] + " ";
- 
+function getFactors(numX) {
+var numX = document.getElementById("numX").value;
+var array = [];
+for(i=0; i<numX; i++) {
+	if (isFactor(numX, i)) {
+    	array.push[i];
+    }
+}
+return array;
+showFactors(getFactors(numX));
 }
 
 </script>
