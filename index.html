@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
+<title>Amicable Numbers</title>
 <h1>Homework 5A</h1>
 </head>
 
@@ -79,11 +81,12 @@ function isAmicable() {
 	factorY = getFactors(num2);
 	showFactors(factorX, num1, "display3");
 	showFactors(factorY, num2, "display4");
-	str = "";
-	if (addFactors(factorX) != addFactors(factorY))
-	str += "not";
-    document.getElementById("finalResult").innerHTML = num1.toString() + " and " + num2.toString() + " are " + str + "amicable";
-		}
+	if (addFactors(factorX) != addFactors(factorY)) {
+	document.getElementById("finalResult").innerHTML = num1.toString() + " and " + num2.toString() + " are not amicable";
+	} else {
+	ocument.getElementById("finalResult").innerHTML = num1.toString() + " and " + num2.toString() + " are amicable";
+	}
+}
 </script>
 
 </body>
