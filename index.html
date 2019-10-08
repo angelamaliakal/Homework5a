@@ -66,9 +66,8 @@ function addFactors(array) {
 function getFactors(number) {
 	array = new Array;
     for (i = 1; i <= number; i++) {
-    	if (isFactor(i, number)) {
-			array.push(i);
-			}
+    	if (isFactor(i, number))
+	array.push(i);
         }
 	return array;
 }
