@@ -83,7 +83,8 @@ function isAmicable() {
 	showFactors(factorY, num2, "display4");
 	if (addFactors(factorX) != addFactors(factorY)) {
 	document.getElementById("finalResult").innerHTML = num1.toString() + " and " + num2.toString() + " are not amicable";
-	} else {
+	} 
+	if (addFactors(factorX) == addFactors(factorY)) {
 	document.getElementById("finalResult").innerHTML = num1.toString() + " and " + num2.toString() + " are amicable";
 	}
 }
