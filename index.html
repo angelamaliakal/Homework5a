@@ -18,16 +18,13 @@
   <input type="text" name="Lucky Number" id="numY">
   <br>
   <input type="button" onclick="isAmicable()" value="Amicable?">
+<h4 id="display1"></h4>
+<h4 id="display2"></h4>
+<h3 id="result"></h3>
 </form>
 
 
-<h4>Display Factors</h4>
-<span id="display3"></span>
-<span id="display4"></span>
-<br>
 
-<h4>Result</h4>
-<span id="finalResult"></span>
 
 <script language = "javascript">
 // function displayNum() {
@@ -78,13 +75,13 @@ function isAmicable() {
 	num2 = document.getElementById('numY').value;
 	factorX = getFactors(num1);
 	factorY = getFactors(num2);
-	showFactors(factorX, num1, "display3");
-	showFactors(factorY, num2, "display4");
+	showFactors(factorX, num1, "display1");
+	showFactors(factorY, num2, "display2");
 	if (addFactors(factorX) != addFactors(factorY)) {
-	document.getElementById("finalResult").innerHTML = num1.toString() + " and " + num2.toString() + " are not amicable";
+	document.getElementById("result").innerHTML = num1.toString() + " and " + num2.toString() + " are not amicable";
 	} 
 	if (addFactors(factorX) == addFactors(factorY)) {
-	document.getElementById("finalResult").innerHTML = num1.toString() + " and " + num2.toString() + " are amicable";
+	document.getElementById("result").innerHTML = num1.toString() + " and " + num2.toString() + " are amicable";
 	}
 }
 </script>
